@@ -15,6 +15,10 @@
     position: fixed;
     width: 100%;
   }
+
+  .menu-main-row-header-container .logo-container-header {
+    margin-bottom: 0px !important;
+  }
 /* Ajustar tamaño del logo en móviles */
 @media (max-width: 768px) {
   #logo img {

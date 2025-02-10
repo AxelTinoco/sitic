@@ -28,12 +28,12 @@ function mi_child_enqueue_styles() {
         filemtime(get_stylesheet_directory() . '/css/header.css')
     );
 
-    // wp_enqueue_style(
-    //     'footer-style',
-    //     get_stylesheet_directory_uri() . '/css/footer.css',
-    //     array('layout-style'), 
-    //     filemtime(get_stylesheet_directory() . '/css/footer.css')
-    // );
+    wp_enqueue_style(
+        'sliderHero-style',
+        get_stylesheet_directory_uri() . '/css/sliderHero.css',
+        array('parent-style'), 
+        filemtime(get_stylesheet_directory() . '/css/sliderHero.css')
+    );
 
     // wp_enqueue_style(
     //     'buttons-style',
@@ -60,3 +60,16 @@ function mi_child_enqueue_styles() {
 
 }
 add_action('wp_enqueue_scripts', 'mi_child_enqueue_styles');
+
+
+function agregar_variables_css() {
+    ?>
+    <style>
+        :root {
+            --primary-color: <?php echo get_theme_mod('primary_color', '#007bff'); ?>;
+            --secondary-color: <?php echo get_theme_mod('secondary_color', '#6c757d'); ?>;
+        }
+    </style>
+    <?php
+}
+add_action('wp_head', 'agregar_variables_css');
