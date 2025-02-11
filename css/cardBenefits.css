@@ -1,0 +1,9 @@
+.card-benefits .et_pb_column .et_pb_module .et_pb_slides .et_pb_slide {
+    background-color: var(--blue-secondary) !important;
+}
+
+.card-benefits .et_pb_column .et_pb_module .et-pb-slider-arrows {
+    background: white;
+    display: flex;
+    height: 60px;
+}
