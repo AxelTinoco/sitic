@@ -43,6 +43,13 @@ function mi_child_enqueue_styles()
         filemtime(get_stylesheet_directory() . "/css/cardBenefits.css")
     );
 
+    wp_enqueue_style(
+        "carrouselHome-style",
+        get_stylesheet_directory_uri() . "/css/carrouselHome.css",
+        ["parent-style"],
+        filemtime(get_stylesheet_directory() . "/css/carrouselHome.css")
+    );
+
     // wp_enqueue_style(
     //     'buttons-style',
     //     get_stylesheet_directory_uri() . '/css/buttons.css',
