@@ -1,0 +1,9 @@
+.contact-with-icon .et_pb_text_inner {
+    p {
+        display: flex;
+        align-items: center;
+        img {
+            margin-right: 1em;
+        }
+    }
+}

@@ -1,30 +1,24 @@
-
-
-
-
-
-
-
-
-
-
-
+.button-hero {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
 
 @media (max-width: 479px) {
-  .button-hero-container{
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-  }
-  .hero-button-main-container{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-  }
-  .button-hero{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-  }
+    .button-hero-container {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+    }
+    .hero-button-main-container {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .button-hero {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
 }

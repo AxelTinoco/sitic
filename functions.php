@@ -50,6 +50,13 @@ function mi_child_enqueue_styles()
         filemtime(get_stylesheet_directory() . "/css/carrouselHome.css")
     );
 
+    wp_enqueue_style(
+        "contact-style",
+        get_stylesheet_directory_uri() . "/css/contact.css",
+        ["parent-style"],
+        filemtime(get_stylesheet_directory() . "/css/contact.css")
+    );
+
     // wp_enqueue_style(
     //     'buttons-style',
     //     get_stylesheet_directory_uri() . '/css/buttons.css',
