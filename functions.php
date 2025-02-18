@@ -108,3 +108,26 @@ function agregar_variables_css()
     <?php
 }
 add_action("wp_head", "agregar_variables_css");
+
+function my_enqueue_slick_slider()
+{
+    // Encolar CSS de Slick
+    wp_enqueue_style(
+        "slick-css",
+        get_stylesheet_directory_uri() . "/slick/slick.css"
+    );
+    wp_enqueue_style(
+        "slick-theme-css",
+        get_stylesheet_directory_uri() . "/slick/slick-theme.css"
+    );
+
+    // Encolar JS de Slick, asegurándote de que jQuery esté cargado
+    wp_enqueue_script(
+        "slick-js",
+        get_stylesheet_directory_uri() . "/slick/slick.min.js",
+        ["jquery"],
+        "1.8.1",
+        true
+    );
+}
+add_action("wp_enqueue_scripts", "my_enqueue_slick_slider");
