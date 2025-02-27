@@ -1,0 +1,15 @@
+/* Impacta en todos las tabs del sitio */
+ul.et_pb_tabs_controls {
+    background-color: transparent;
+}
+.et_pb_tabs {
+    border: none !important;
+}
+
+.first-main-breadcrumb .et_pb_all_tabs .et_pb_tab .et_pb_tab_content {
+    p {
+        border-bottom: 1px #cacef3 solid;
+        padding-bottom: 2rem;
+        margin-bottom: 1rem;
+    }
+}

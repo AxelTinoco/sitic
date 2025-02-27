@@ -57,6 +57,13 @@ function mi_child_enqueue_styles()
         filemtime(get_stylesheet_directory() . "/css/contact.css")
     );
 
+    wp_enqueue_style(
+        "tabs-style",
+        get_stylesheet_directory_uri() . "/css/consultView/tabsInfo.css",
+        ["parent-style"],
+        filemtime(get_stylesheet_directory() . "/css/consultView/tabsInfo.css")
+    );
+
     // wp_enqueue_style(
     //     'buttons-style',
     //     get_stylesheet_directory_uri() . '/css/buttons.css',
