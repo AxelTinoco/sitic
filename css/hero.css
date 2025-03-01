@@ -1,7 +1,11 @@
 .button-hero {
     display: flex;
     justify-content: center;
-    width: 100%;
+    width: fit-content;
+}
+
+.button-hero:hover {
+    width: max-content;
 }
 
 @media (max-width: 479px) {

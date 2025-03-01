@@ -4,3 +4,16 @@ Template: Divi
 Author: Tu Nombre
 Version: 1.0
 */
+
+/* Button styles wth custom font*/
+
+.et_pb_button {
+  font-family: 'NeuePlakText-Regular', serif;
+  padding-top: .1em;
+}
+.et_pb_button:hover, .et_pb_module .et_pb_button:hover {
+  padding-top: .1em;
+}
+.et_pb_button:hover::after {
+  margin-top: .1em;
+}

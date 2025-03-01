@@ -8,9 +8,9 @@
                     alt="Slide 1"
                 />
             </div>
-            <h2>Optimizar tu infraestructura tecnológica</h2>
+            <h2>Agilidad en la implementación</h2>
             <p>
-                Asegura que tu hardware y software funcionen de manera óptima y segura 
+                Implementamos nuestras soluciones de manera rápida y eficiente, minimizando las interrupciones en tu operación.
             </p>
         </div>
     </div>
@@ -25,7 +25,7 @@
             </div>
             <h2>Optimizar tu infraestructura tecnológica</h2>
             <p>
-                Asegura que tu hardware y software funcionen de manera óptima y segura 
+                Desde la eliminación de tareas manuales hasta la automatización avanzada, SITIC agiliza tus procesos y libera a tu equipo para enfocarse en tareas estratégicas.
             </p>
         </div>
     </div>
@@ -38,9 +38,9 @@
                     alt="Slide 1"
                 />
             </div>
-            <h2>Adoptar las prácticas más innovadoras de la industria</h2>
+            <h2>Control total de tus operaciones</h2>
             <p>
-                Aprovecha el conocimiento especializado y las mejores prácticas aplicadas en empresas líderes de tu sector. Somos tus ojos en el mundo tecnológico para identificar las mejores herramientas para tu negocio.
+                Con SITIC, obtienes una visibilidad completa y un control detallado de todas tus unidades de tu negocio.
             </p>
         </div>
     </div>
@@ -53,9 +53,24 @@
                     alt="Slide 1"
                 />
             </div>
-            <h2>Adoptar las prácticas más innovadoras de la industria</h2>
+            <h2>Crecimiento escalable</h2>
             <p>
-                Aprovecha el conocimiento especializado y las mejores prácticas aplicadas en empresas líderes de tu sector. Somos tus ojos en el mundo tecnológico para identificar las mejores herramientas para tu negocio.
+                Nuestras soluciones están diseñadas para crecer contigo, asegurando que tu empresa pueda expandirse con agilidad y eficiencia.
+            </p>
+        </div>
+    </div>
+    <div class="slider-item">
+        <div class="text-container-process">
+            <div class="image-container-process">
+                <img
+                    class="image-slide"
+                    src="https://dev.siticsoftware.com/wp-content/uploads/2025/02/Analysis@2x.webp"
+                    alt="Slide 1"
+                />
+            </div>
+            <h2>Toma de decisiones informada y estratégica</h2>
+            <p>
+                Gracias a nuestras herramientas de inteligencia de negocios, tendrás acceso en tiempo real a datos clave que te permitirán anticipar oportunidades y tomar decisiones precisas.
             </p>
         </div>
     </div>
@@ -68,14 +83,14 @@
             flex-direction: column;
             max-width: 850px;
             width: 60%;
-            padding: 15px;
             justify-content: space-between;
             align-items: center;
             border: 1px solid #E5E7F9;
             margin-right: 20px;
             transition: background 1s ease, color 1s ease, transform 1s ease;
-            min-height: 400px !important;
+            min-height: 400px;
             background: #F2F3FC;
+            padding: 40px 36px 52px 36px;
         }
     }
 
@@ -113,19 +128,39 @@
             object-fit: contain;
         }
     }
-    .my-slick-slider .slick-prev::before,
+    .process-slider .slick-prev::before,
     .slick-next::before {
         font-size: 0px;
     }
-    .my-slick-slider .slick-next,
+    .process-slider .slick-next,
     .slick-prev {
         top: 110%;
         width: 30px;
     }
-    .my-slick-slider .slick-prev {
-        left: 85% !important;
+    .process-slider .slick-next:hover img,
+    .slick-prev:hover img{
+        background: var(--blue-secondary);
+        border-radius: 100%;
     }
-    .my-slick-slider .slick-next {
-        right: 15px !important;
+    .process-slider .slick-prev {
+        left: 92% !important;
+    }
+    .process-slider .slick-next {
+        right: 20px !important;
+    }
+    @media (max-width: 480px) {
+        .process-slider {
+        .slider-item {
+            min-height: 400px;
+            padding: 40px 16px;
+        }
+        }
+        .process-slider .slick-prev {
+         left: 70% !important;
+    }
+    .process-slider .slick-next,
+    .process-slider .slick-prev {
+        top: 110%;
+    }
     }
 </style>
