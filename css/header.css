@@ -12,6 +12,28 @@
     padding: 25px;
 }
 
+
+.main-header li a {
+    color: #fff !important;
+} 
+
+/* Header scroll */
+
+.main-header.header-scroll {
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Si la imagen es un SVG inline, puedes modificar su fill */
+.main-header.header-scroll svg {
+    fill: var(--blue-tecnology);
+  }
+
+.main-header.header-scroll li a {
+    color: var(--blue-deep) !important;
+} 
+
+
 .main-header-container {
     position: fixed;
     width: 100%;

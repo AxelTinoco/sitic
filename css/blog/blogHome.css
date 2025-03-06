@@ -1,0 +1,55 @@
+.post-principal article {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-principal article h2{
+  order: 1;
+}
+
+.post-principal article p{
+  order: 0;
+}
+
+.post-principal article div{
+  order: 2;
+}
+
+.post-principal article p a{
+  background-color: #E5E7F9;
+  padding: 0px 4px 4px 4px;
+}
+
+
+/* .post-principal .post-content a.more-link::after {
+  content: " →";
+  margin-left: 5px;
+  transition: margin-left 0.3s ease;
+}
+
+.post-principal .post-content a.more-link:hover::after {
+  margin-left: 8px; /* La flecha se mueve un poco a la derecha al pasar el cursor 
+} 
+*/
+
+.post-principal .post-content a.more-link{
+  margin-top: 1rem;
+  color: var(--blue-tecnology);
+}
+
+.post-principal .post-content a.more-link::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  background-image: url('https://dev.siticsoftware.com/wp-content/uploads/2025/03/arrow-right-simlpe.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  transition: margin-left 0.3s ease;
+}
+
+.post-principal .post-content a.more-link:hover::after {
+  margin-left: 8px;
+}

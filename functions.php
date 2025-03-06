@@ -64,19 +64,19 @@ function mi_child_enqueue_styles()
         filemtime(get_stylesheet_directory() . "/css/consultView/tabsInfo.css")
     );
 
-    // wp_enqueue_style(
-    //     'buttons-style',
-    //     get_stylesheet_directory_uri() . '/css/buttons.css',
-    //     array('base-style'),
-    //     filemtime(get_stylesheet_directory() . '/css/buttons.css')
-    // );
+    wp_enqueue_style(
+        'consult-style',
+        get_stylesheet_directory_uri() . '/css/consultView/heroConsult.css',
+        array('parent-style'),
+        filemtime(get_stylesheet_directory() . '/css/consultView/heroConsult.css')
+    );
 
-    // wp_enqueue_style(
-    //     'forms-style',
-    //     get_stylesheet_directory_uri() . '/css/forms.css',
-    //     array('base-style'),
-    //     filemtime(get_stylesheet_directory() . '/css/forms.css')
-    // );
+    wp_enqueue_style(
+        'blog-style',
+        get_stylesheet_directory_uri() . '/css/blog/blogHome.css',
+        array('parent-style'),
+        filemtime(get_stylesheet_directory() . '/css/blog/blogHome.css')
+    );
 
     // wp_enqueue_style(
     //     'responsive-style',
@@ -110,6 +110,14 @@ function agregar_variables_css()
                 "blue_secondary",
                 "#F2F3FC"
             ); ?>;
+            --blue-tecnology: <?php echo get_theme_mod(
+                "blue_tecnology",
+                "#4754D6"
+            ); ?>;
+            --blue-deep: <?php echo get_theme_mod(
+                "blue_deep",
+                "#05012C"
+            ); ?>;
         }
     </style>
     <?php
@@ -138,3 +146,23 @@ function my_enqueue_slick_slider()
     );
 }
 add_action("wp_enqueue_scripts", "my_enqueue_slick_slider");
+
+
+function mi_child_theme_scripts() {
+    wp_enqueue_script(
+        'custom-script',
+        get_stylesheet_directory_uri() . '/js/header/customHeader.js',
+        array(), 
+        '1.0',
+        true 
+    );
+
+    wp_enqueue_script(
+        'button-modifier',
+        get_stylesheet_directory_uri() . '/js/blog/blogPrincipal.js',
+        array(), 
+        '1.0',
+        true 
+    );
+}
+add_action('wp_enqueue_scripts', 'mi_child_theme_scripts');
