@@ -21,6 +21,55 @@
 }
 
 
+/* Acomodo de tag post global */
+
+.et_pb_salvattore_content article h2{
+  order: 1;
+}
+
+.et_pb_salvattore_content article p{
+  order: 0;
+}
+
+.et_pb_salvattore_content article div{
+  order: 2;
+}
+
+.et_pb_salvattore_content article p a{
+  background-color: #E5E7F9;
+  padding: 0px 4px 4px 4px;
+}
+
+/* Asegurarse que el flexbox funciona correctamente */
+.post-meta {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+}
+
+/* Ordenar los elementos */
+.post-meta .published {
+  order: 2 !important;
+}
+
+.post-meta a[rel="tag"] {
+  order: 0 !important;
+}
+
+/* Ajustar el separador | */
+.post-meta > .published + :not(a):not(span), 
+.post-meta > a[rel="tag"] ~ :not(a):not(span) {
+  order: 1 !important;
+}
+
+/* Ocultar el separador | */
+.post-meta > :not(a):not(span),
+.post-meta > span + :not(a):not(span),
+.post-meta > a + :not(a):not(span) {
+    display: none !important;
+}
+
 /* .post-principal .post-content a.more-link::after {
   content: " →";
   margin-left: 5px;
@@ -31,6 +80,11 @@
   margin-left: 8px; /* La flecha se mueve un poco a la derecha al pasar el cursor 
 } 
 */
+
+.post-content a.more-link{
+  margin-top: 1rem;
+  color: var(--blue-tecnology);
+}
 
 .post-principal .post-content a.more-link{
   margin-top: 1rem;

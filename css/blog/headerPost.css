@@ -1,0 +1,47 @@
+.post-meta{
+  display: flex;
+  gap: 1rem;
+}
+
+.post-title{
+  font-size: 38px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  color: #000;
+  leading-trim: both;
+  text-edge: cap;
+  font-feature-settings: 'liga' off, 'clig' off;
+}
+.author-name{
+  color: #252539;
+  leading-trim: both;
+  text-edge: cap;
+  font-feature-settings: 'liga' off, 'clig' off;
+  font-family: 'NeuePlakText-Regular',serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+
+}
+
+.post-author{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #B0B6ED;
+  margin-bottom: 2rem;
+}
+
+.post-with-image-author{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.social-share{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}

@@ -12,12 +12,31 @@
     padding: 25px;
 }
 
-
 .main-header li a {
     color: #fff !important;
-} 
+}
+
+/* Seleccionar el ultimo element */
+#menu-primary > li:last-child > a {
+    background: white;
+    padding: 1rem;
+    padding-bottom: 1.2rem;
+    border-radius: 2px;
+    color: var(--blue-tecnology) !important;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.et_pb_menu--with-logo .et_pb_menu__menu > nav > ul > li > a {
+    padding: 0;
+}
 
 /* Header scroll */
+
+/* Cambiar el background del último elemento cuando el header tiene la clase header-scroll */
+.main-header.header-scroll #menu-primary > li:last-child > a {
+    background: var(--blue-tecnology);
+    color: white !important; 
+  }
 
 .main-header.header-scroll {
     background: #fff;
@@ -27,12 +46,15 @@
 /* Si la imagen es un SVG inline, puedes modificar su fill */
 .main-header.header-scroll svg {
     fill: var(--blue-tecnology);
-  }
+}
 
 .main-header.header-scroll li a {
     color: var(--blue-deep) !important;
-} 
+}
 
+.header-scroll .et_pb_menu_0_tb_header .mobile_nav .mobile_menu_bar::before {
+    color: var(--blue-deep) !important;
+  }
 
 .main-header-container {
     position: fixed;

@@ -17,3 +17,16 @@ Version: 1.0
 .et_pb_button:hover::after {
   margin-top: .1em;
 }
+
+.post-content a.more-link::after {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+  background-image: url('https://dev.siticsoftware.com/wp-content/uploads/2025/03/arrow-right-simlpe.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+  transition: margin-left 0.3s ease;
+}

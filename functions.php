@@ -7,14 +7,6 @@ function mi_child_enqueue_styles()
         get_template_directory_uri() . "/style.css"
     );
 
-    // // Encolar los estilos del child theme en archivos separados
-    // wp_enqueue_style(
-    //     'base-style',
-    //     get_stylesheet_directory_uri() . '/css/base.css',
-    //     array('parent-style'),
-    //     filemtime(get_stylesheet_directory() . '/css/base.css') // Versionado dinámico
-    // );
-
     wp_enqueue_style(
         "hero-style",
         get_stylesheet_directory_uri() . "/css/hero.css",
@@ -27,6 +19,13 @@ function mi_child_enqueue_styles()
         get_stylesheet_directory_uri() . "/css/header.css",
         ["layout-style"],
         filemtime(get_stylesheet_directory() . "/css/header.css")
+    );
+
+    wp_enqueue_style(
+        "submenu-style",
+        get_stylesheet_directory_uri() . "/css/subMenu.css",
+        ["layout-style"],
+        filemtime(get_stylesheet_directory() . "/css/subMenu.css")
     );
 
     wp_enqueue_style(
@@ -77,13 +76,6 @@ function mi_child_enqueue_styles()
         array('parent-style'),
         filemtime(get_stylesheet_directory() . '/css/blog/blogHome.css')
     );
-
-    // wp_enqueue_style(
-    //     'responsive-style',
-    //     get_stylesheet_directory_uri() . '/css/responsive.css',
-    //     array('base-style'),
-    //     filemtime(get_stylesheet_directory() . '/css/responsive.css')
-    // );
 
     wp_enqueue_style(
         "google-fonts",
@@ -166,3 +158,74 @@ function mi_child_theme_scripts() {
     );
 }
 add_action('wp_enqueue_scripts', 'mi_child_theme_scripts');
+
+
+//Header del post 
+function custom_post_header_styles() {
+
+    wp_enqueue_style(
+        'custom-header-post-style',
+        get_stylesheet_directory_uri() . '/css/blog/headerPost.css',
+        array('parent-style'),
+        filemtime(get_stylesheet_directory() . '/css/blog/headerPost.css')
+    );
+
+}
+add_action('wp_enqueue_scripts', 'custom_post_header_styles');
+
+// Shortcode para el encabezado del post (ahora sin el CSS)
+add_shortcode('custom_post_header', function() {
+    ob_start();
+    
+    // Variables dinámicas del post
+    $post_id = get_the_ID();
+    $post_date = get_the_date('j \d\e F \d\e Y');
+    $content = get_post_field('post_content', $post_id);
+    $word_count = str_word_count(strip_tags($content));
+    $reading_time = ceil($word_count / 200);
+    $post_title = get_the_title();
+    $author_id = get_post_field('post_author', $post_id);
+    $author_name = get_the_author_meta('display_name', $author_id);
+    $author_image = get_avatar_url($author_id, ['size' => 96]);
+    $post_url = urlencode(get_permalink());
+    $featured_image = has_post_thumbnail() ? get_the_post_thumbnail_url($post_id, 'large') : '';
+    
+    ?>
+    <!-- Solo el HTML del encabezado del post -->
+    <div class="post-header-custom">
+        <div class="post-meta">
+            <span class="post-date"><?php echo $post_date; ?></span>
+            <span class="post-reading-time"><?php echo $reading_time; ?> min</span>
+        </div>
+        
+        <h1 class="post-title"><?php echo $post_title; ?></h1>
+        
+        <div class="post-author">
+            <div class="post-with-image-author">
+                <img src="https://dev.siticsoftware.com/wp-content/uploads/2025/03/logo-positivo.svg" alt="sitic" class="sitic-theme">
+                <span class="author-name">El equipo de SITIC</span>
+            </div>
+                    
+            <div class="social-share">
+                <a href="https://twitter.com/intent/tweet?url=<?php echo $post_url; ?>" class="share-twitter">
+                    <img src="https://dev.siticsoftware.com/wp-content/uploads/2025/03/twitter.svg" width="24" height="24" alt="Twitter"> 
+                </a>
+                <a href="https://www.linkedin.com/sharing/share-offsite/?url=<?php echo $post_url; ?>" class="share-linkedin">
+                    <img src="https://dev.siticsoftware.com/wp-content/uploads/2025/03/linkedIn.svg" width="24" height="24" alt="LinkedIn">
+                </a>
+                <a href="#" class="share-link" onclick="navigator.clipboard.writeText('<?php echo get_permalink(); ?>');return false;">
+                    <img src="https://dev.siticsoftware.com/wp-content/uploads/2025/03/share.svg" width="24" height="24" alt="Copiar enlace">
+                </a>
+            </div>
+        </div>
+        
+        <?php if ($featured_image) : ?>
+        <div class="post-featured-image">
+            <img src="<?php echo $featured_image; ?>" alt="<?php echo $post_title; ?>">
+        </div>
+        <?php endif; ?>
+    </div>
+    <?php
+    
+    return ob_get_clean();
+});
