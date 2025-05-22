@@ -17,7 +17,7 @@
 }
 
 /* Seleccionar el ultimo element */
-#menu-primary > li:last-child > a {
+#menu-primary > li:nth-last-child(2) > a {
     background: white;
     padding: 1rem;
     padding-bottom: 1.2rem;
@@ -33,7 +33,7 @@
 /* Header scroll */
 
 /* Cambiar el background del último elemento cuando el header tiene la clase header-scroll */
-.main-header.header-scroll #menu-primary > li:last-child > a {
+.main-header.header-scroll #menu-primary > li:nth-last-child(2) > a {
     background: var(--blue-tecnology);
     color: white !important; 
   }
@@ -64,6 +64,59 @@
 .menu-main-row-header-container .logo-container-header {
     margin-bottom: 0px !important;
 }
+
+
+/* Contenedor general del switcher */
+.trp-language-switcher-container {
+  position: relative;
+}
+
+/* Ocultamos inicialmente el submenú */
+.trp-language-switcher-container ul {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  z-index: 9999;
+  min-width: 120px;
+  top: 100%; /* Posición debajo del botón */
+  left: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mostrar al hacer hover */
+.trp-language-switcher-container:hover ul {
+  display: block;
+}
+
+/* Estilo para cada opción */
+.trp-language-switcher-container ul li {
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+/* Hover sobre cada idioma */
+.trp-language-switcher-container ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Botón principal (idioma actual) */
+.trp-language-switcher-container > a {
+  padding: 8px 12px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Opcional: Cambiar el icono del idioma actual si lo necesitas */
+.trp-language-switcher-container > a::after {
+  content: " ▼";
+  font-size: 10px;
+}
+
 /* Ajustar tamaño del logo en móviles */
 @media (max-width: 768px) {
     #logo img {
